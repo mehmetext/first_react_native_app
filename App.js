@@ -7,8 +7,11 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.upper_container}>
+        <Text>Hello, world!</Text>
+      </View>
+      <View style={styles.footer_container}>
         <Text>Hello, world!</Text>
       </View>
     </SafeAreaView>
@@ -17,10 +20,15 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+  },
+  upper_container: {
+    flex: 1,
     backgroundColor: 'red',
-    margin: 10,
-    padding: 10,
-    borderRadius: 6,
+  },
+  footer_container: {
+    flex: 2,
+    backgroundColor: 'blue',
   },
 });
 
