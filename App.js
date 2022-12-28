@@ -2,10 +2,6 @@ import React from 'react';
 import {SafeAreaView, Text, View, StyleSheet} from 'react-native';
 
 const App = () => {
-  const sayHello = text => {
-    console.log('Hello, world!', text);
-  };
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.upper_container}>
