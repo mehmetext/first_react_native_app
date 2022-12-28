@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, Text, View, Button} from 'react-native';
+import {SafeAreaView, Text, View, StyleSheet} from 'react-native';
 
 const App = () => {
   const sayHello = text => {
@@ -8,39 +8,20 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      <View
-        style={{
-          alignItems: 'stretch',
-          justifyContent: 'center',
-          height: '100%',
-          width: '100%',
-        }}>
-        <View
-          style={{
-            marginBottom: 10,
-            padding: 10,
-            backgroundColor: 'red',
-            alignItems: 'center',
-          }}>
-          <Text
-            style={{
-              color: 'white',
-              fontWeight: 'bold',
-              fontSize: 36,
-            }}>
-            Mehmet Konukçu
-          </Text>
-        </View>
-        <Button
-          title="Press Me!"
-          color="red"
-          onPress={e => {
-            sayHello('deneme');
-          }}
-        />
+      <View style={styles.container}>
+        <Text>Hello, world!</Text>
       </View>
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'red',
+    margin: 10,
+    padding: 10,
+    borderRadius: 6,
+  },
+});
 
 export default App;
