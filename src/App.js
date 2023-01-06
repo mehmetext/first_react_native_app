@@ -1,21 +1,21 @@
+import {Text, SafeAreaView, Button} from 'react-native';
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import Card from './components/Card';
+import axios from 'axios';
 
-const App = () => {
+export default function App() {
+  async function fetchData() {
+    try {
+      let res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      console.log('fetchData axios:', res);
+    } catch (error) {
+      console.error('fetchData axios:', error);
+    }
+  }
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Card title="Eddard Stark" text="Winter is coming..." />
-      <Card title="John Doe" text="Lorem ipsum dolor sit amet..." />
+    <SafeAreaView>
+      <Text>Hello API!</Text>
+      <Button title="Fetch Data" onPress={fetchData} />
     </SafeAreaView>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#e0e0e0',
-  },
-});
-
-export default App;
+}
